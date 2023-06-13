@@ -1,9 +1,12 @@
 const express = require('express');
-const app = express()
-const port = 3001
+const cors = require('cors');
+const corsConfigs = require('./config/corsConfig');
+const app = express();
+const port = 3001;
 const Joi = require('joi');
 
 app.use(express.json());
+app.use(cors(corsConfigs));
 
 let data = [];
 
